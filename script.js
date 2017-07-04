@@ -14,8 +14,12 @@ $(document).ready(function(){
         success : function(parameter){
             author = parameter.quoteAuthor;
             quote = parameter.quoteText;
-            $('#quote').text(quote);
+            $('#quote').text('"'+quote+'"');
+            if(author){
             $('#author').text("-" + author);
+            } else {
+                $('#author').text("-Anonymous");
+            }
         }
     });
     }
